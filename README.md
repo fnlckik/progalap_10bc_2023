@@ -1,2 +1,1 @@
-# progalap_10bc_2023
-Programozási alapismeretek - 10.
+# Progalap 10. - 2023
