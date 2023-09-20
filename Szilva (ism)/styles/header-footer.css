@@ -34,3 +34,32 @@ footer, footer div {
     float: left;
     width: calc(100% / 3);
 }
+
+#kozosseg img {
+    height: 1em;
+    margin-right: .5em;
+}
+
+#kozosseg p {
+    display: inline;
+}
+
+#kozosseg a {
+    background-color: var(--feher);
+    color: darkblue;
+    text-decoration: none;
+    margin: 12px;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+#kozosseg a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+#copyright {
+    font-style: italic;
+    margin-top: 25px;
+}
+
