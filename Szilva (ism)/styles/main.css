@@ -17,7 +17,7 @@ main table {
     background-color: var(--feher);
 }
 
-#miert {
+/* #miert {
     position: relative;
 }
 
@@ -26,5 +26,18 @@ main table {
     position: absolute;
     inset: 0;
     z-index: -1;
+    background-image: url(../images/background.jpg)
+} */
+
+#miert {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+}
+
+article {
+    background-color: var(--feher);
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
 }
 
