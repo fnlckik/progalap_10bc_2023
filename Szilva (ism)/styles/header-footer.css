@@ -48,4 +48,18 @@ footer, footer div {
     background-color: var(--feher);
     color: darkblue;
     text-decoration: none;
+    display: inline-block;
+    margin: 12px;
+    padding: 5px 20px;
 }
+
+#kozosseg a:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+#copyright {
+    font-style: italic;
+    margin-top: 25px;
+}
+
