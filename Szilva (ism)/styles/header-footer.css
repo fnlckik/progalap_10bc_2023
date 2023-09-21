@@ -63,3 +63,24 @@ footer, footer div {
     margin-top: 25px;
 }
 
+@media (max-width: 675px) {
+    header {
+        letter-spacing: 0;
+    }
+
+    #kapcsolat span {
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    #kozosseg p {
+        display: none;
+    }
+
+    #kozosseg a {
+        display: block;
+        width: 75%;
+        margin: 1rem auto;
+        padding: 1rem auto;
+    }
+}
