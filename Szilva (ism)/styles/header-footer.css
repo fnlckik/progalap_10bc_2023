@@ -81,6 +81,6 @@ footer, footer div {
         display: block;
         width: 75%;
         margin: 1rem auto;
-        padding: 1rem auto;
+        padding: 1rem 0;
     }
 }
