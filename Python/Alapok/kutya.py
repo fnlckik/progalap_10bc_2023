@@ -1,0 +1,5 @@
+# print("Kiskutyák száma: ", end="")
+# k = input()
+k = int(float(input("Kiskutyák száma: ")))
+print(k + 1, "kiskutya")
+# print(k + " kiskutya")
