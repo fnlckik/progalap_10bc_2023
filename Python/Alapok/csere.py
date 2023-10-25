@@ -9,6 +9,7 @@ print("Eredetileg:", a, b)
 seged = a
 a = b
 b = seged
+# a, b = b, a
 
 # Kiírás
 print("Fordítva:", a, b)
