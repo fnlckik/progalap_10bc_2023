@@ -1,6 +1,7 @@
 x = float(input("x: "))
 
+print(f"|{x}| = ", end="")
 if x >= 0:
-    print("Abszolútértéke:", x)
+    print(x)
 else:
-    print("Abszolútértéke:", (-1)*x)
+    print((-1)*x)
