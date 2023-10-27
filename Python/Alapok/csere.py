@@ -6,6 +6,7 @@ b = int(input("2. szám: ")) #2
 seged = a
 a = b 
 b = seged 
+# a, b = b, a
 
 # Kiírás
 print("Cserélve:", a, b)
