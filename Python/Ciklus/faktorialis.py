@@ -13,15 +13,16 @@
 n = int(input("n: "))
 
 # Feldolgozás
-# fakt = 1
-# for i in range(1, n+1):
-#     fakt *= i
-
+# Mj: sorozatszámítás tétele
 fakt = 1
-i = 1
-while i <= n:
-    fakt *= i
-    i += 1
+for i in range(1, n+1):
+    fakt = fakt * i
+
+# fakt = 1
+# i = 1
+# while i < n+1:
+#     fakt *= i
+#     i += 1
 
 # Kiírás
 print(n, "faktoriális:", fakt)

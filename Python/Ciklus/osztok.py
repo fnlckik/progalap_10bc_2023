@@ -13,6 +13,7 @@
 n = int(input("n: "))
 
 # Feldolgozás + Kiírás
+# Kiválogatás tétele
 print("A szám osztói:")
 for i in range(1, n+1):
     if n % i == 0:
