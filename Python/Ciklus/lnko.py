@@ -4,7 +4,7 @@ a = int(input("a: "))
 b = int(input("b: "))
 
 while a != b:
-    print(f"({a}; {b})")
+    # print(f"({a}; {b})")
     if a > b:
         a -= b
     else:
