@@ -12,6 +12,6 @@ while c != d:
         c -= d
     else:
         d -= c
-    print(f"({c}, {d})")
+    # print(f"({c}, {d})")
 
 print(f"({a}, {b}) = {c}")
