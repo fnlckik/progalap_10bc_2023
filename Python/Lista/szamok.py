@@ -47,6 +47,6 @@ elem után ne legyen már pontosvessző!
 
 # MO2
 print("F2:", end=" ")
-for i in range(hossz):
+for i in range(hossz-1):
     print(lista[i], end="; ")
 print(lista[hossz-1])
