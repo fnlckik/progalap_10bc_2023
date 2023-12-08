@@ -77,3 +77,23 @@ print()
 # lista = [5, 3, 7, 4, 12, -9, 31, 7]
 # Kimenet:
 # F4: 3 4 -9 7
+
+# MO1 (Máté)
+# print("F4:", end=" ")
+# i = 0
+# while i < n:
+#     if i % 2 == 1:
+#         print(lista[i], end=" ")
+#     i += 1
+
+# MO2 (Kata)
+print("F4:", end=" ")
+for i in range(n):
+    if i % 2 != 0:
+        print(lista[i], end=" ")
+print()
+
+# print("F4:", end=" ")
+# for i in range(1, n, 2):
+#     print(lista[i], end=" ")
+# print()
