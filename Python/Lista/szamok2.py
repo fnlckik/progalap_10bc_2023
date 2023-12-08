@@ -74,5 +74,10 @@ print()
 mindegyiket növeld meg az
 indexének értékével!
 '''
+# lista = [5, 3, 7, 4, 12, -9, 31, 7]
 # Kimenet:
 # F7: 5 4 9 7 16 -4 37 14
+print("F7:", end=" ")
+for i in range(n):
+    print(lista[i]+i, end=" ")
+print()
