@@ -50,10 +50,19 @@ for i in range(n):
 print(f"3. Bukott szakmai tárgyak száma: {db}")
 
 # F4
-
+maxi = 0
+for i in range(1, n):
+    if jegyek[i] > jegyek[maxi]:
+        maxi = i
+kedvenc = targyak[maxi]
+print(f"4. Kedvenc tantárgy: {kedvenc}")
 
 # F5
-
+db = 0
+for i in range(n):
+    if jegyek[i] > atlag:
+        db += 1
+print(f"5. Átlagfeletti tárgyak száma: {db}")
 
 # F6
 
@@ -62,13 +71,34 @@ print(f"3. Bukott szakmai tárgyak száma: {db}")
 
 
 # F8
+'''
+minTargy = targyak[0] # "Fizika"
+minHossz = len(minTargy) # 6
+for i in range(1, n):
+    aktTargy = targyak[i] # "Matek", "Testnevelés", ...
+    aktHossz = len(aktTargy) # 5, 11, ...
+    if aktHossz <= minHossz:
+        minTargy = aktTargy
+        minHossz = aktHossz
+print("8. A legrövidebb nevű tárgy:", minTargy)
+'''
 
+mini = 0
+for i in range(1, n):
+    if len(targyak[i]) <= len(targyak[mini]):
+        mini = i
+print("8. A legrövidebb nevű tárgy:", targyak[mini])
 
 # F9
 
 
 # F10
-
+db = 0
+for i in range(n):
+    aktTargy = targyak[i]
+    if aktTargy[0] == "I":
+        db += 1
+print('10. Az "i" betűvel kezdődő tárgyak száma:', db)
 
 # F11
 
