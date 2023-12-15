@@ -66,19 +66,42 @@ for i in range(n):
 print("5. Átlagfeletti tárgyak száma:", db)
 
 # F6
-
+# Sorozatszámítás (összegzés)
+reciprokosszeg = 0
+for i in range(n):
+    aktualis = 1 / jegyek[i]
+    reciprokosszeg += aktualis
+h = n / reciprokosszeg
+print("6. Jegyek harmonikus közepe:", round(h, 2))
 
 # F7
-
+# Megszámolás
+db = 0
+for i in range(n-1):
+    if szakmai[i] and szakmai[i+1]:
+        db += 1
+print("7. Szakmait ennyiszer követ szakmai:", db)
 
 # F8
-
+# Min kiválasztás
+mintargy = targyak[0]
+for i in range(1, n):
+    if len(targyak[i]) <= len(mintargy):
+        mintargy = targyak[i]
+print("8. A legrövidebb nevű tárgy:", mintargy)
 
 # F9
 
 
 # F10
-
+# Megszámolás
+db = 0
+for i in range(n):
+    # targyak[i][0] == "I"
+    targy = targyak[i] #Pl.: Irodalom
+    if targy[0] == "I":
+        db += 1
+print('10. Az "I" betűvel kezdődő tárgyak száma:', db)
 
 # F11
 
