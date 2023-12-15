@@ -104,6 +104,13 @@ for i in range(n):
 print('10. Az "I" betűvel kezdődő tárgyak száma:', db)
 
 # F11
-
+# Max kiválasztás
+# -végtelen jelentése: annyira kicsi, hogy sosem érhetjük el
+maxert = -1 # Ez itt most nekünk -végtelen
+for i in range(1, n):
+    aktualis = abs(jegyek[i] - jegyek[i-1])
+    if maxert < aktualis:
+        maxert = aktualis
+print("11. A legnagyobb eltérés egymás alatti jegyeknél:", maxert)
 
 # F12
