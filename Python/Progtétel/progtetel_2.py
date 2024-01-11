@@ -64,21 +64,72 @@ else:
     print("5. Az első a legkisebb!")
 
 # F6
+# 6. Add meg az első olyan elemet, amely nagysága eléri a lista átlagát!
+# 6. Első legalább átlagos elem: 12
 
+# Összegzés tétel
+osszeg = 0
+for i in range(n):
+    osszeg += x[i]
+atlag = osszeg / n
+
+# Kiválasztás tétel
+i = 0
+while not(x[i] >= atlag):
+    i += 1
+print("6. Első legalább átlagos elem:", x[i])
 
 # F7
 # 7. Monoton növekedő-e a lista?
 # Pl.: 7. Nem monoton növekvő!
+# Monoton növekvő: minden elem legalább akkora mint az előző
+# Eldöntés: Van-e ami kisebb az előzőnél?
+# Kássa Máté
+# i = 0
+# while i < n-1 and not(x[i+1] < x[i]):
+#     i += 1
+# if i < n-1:
+#     print("7. Nem monoton növekvő!")
+# else:
+#     print("7. Monoton növekvő!")
 
-
+i = 1
+while i < n and not(x[i] < x[i-1]):
+    i += 1
+if i < n:
+    print("7. Nem monoton növekvő!")
+else:
+    print("7. Monoton növekvő!")
 
 # F8
+# 8. Egyforma előjelű-e az összes eleme a listának?
+# 8. Nem egyforma előjelűek!
+# Eldöntés: Van-e két egymás melletti különböző előjel?
 
+# Kássa Máté, Németh Gábor
+# i = 0
+# while i < n-1 and not(x[i] > 0 and x[i+1] < 0 or x[i] < 0 and x[i+1] > 0):
+#     i += 1
+# if i < n-1:
+#     print("8. Nem egyforma előjelűek!")
+# else:
+#     print("8. Egyforma előjelűek!")
+
+# Eldöntés: Mindegyik olyan előjelű-e, mint az első volt?
+i = 1
+while i < n and not(x[i] * x[0] < 0):
+    i += 1 / 1
+if i < n:
+    print("8. Nem egyforma előjelűek!")
+else:
+    print("8. Egyforma előjelűek!")
 
 # F9 
 
 
 # F10
+# 10. Van-e lokális maximum a listában? Ha igen, add meg az első helyét és értékét! 
+# (Lokális maximum: nagyobb mindkét szomszédjánál.)
 
 
 # F11
