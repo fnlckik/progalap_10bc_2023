@@ -36,18 +36,52 @@ if i < n:
     print("2. Első 10 és 20 közötti:", i+1)
 
 # F3
-
+# 3. Található-e 3-mal osztható páratlan szám? Amennyiben igen, add meg az elsőt!
+# 3. Első 3-mal osztható páratlan: -3
+i = 0
+while i < n and not(x[i] % 3 == 0 and x[i] % 2 == 1):
+    i += 1
+if i < n:
+    print("3. Első 3-mal osztható páratlan:", x[i])    
 
 # F4
+# 4. Osztható-e valamelyik szám 4-gyel? Ha igen, add meg az utolsót!
+# 4. Utolsó 4-gyel oszható: 16
+# "Klasszikus megoldás"
+i = n-1
+while i >= 0 and not(x[i] % 4 == 0):
+    i -= 1
+if i >= 0:
+    print("4. Utolsó 4-gyel oszható:", x[i])
+else:
+    print("4. Nincs 4-gyel osztható!")
 
+# i = 0
+# while i < n and not(x[n-1-i] % 4 == 0):
+#     i += 1
+# if i < n:
+#     print("4. Utolsó 4-gyel oszható:", x[n-1-i])
+# else:
+#     print("4. Nincs 4-gyel osztható!")
 
 # F5
-
+# 5. Igaz-e, hogy a lista első eleme a legkisebb?
+# 5. Nem az első a legkisebb!
+# Eldöntés: Van-e kisebb az első elemnél?
+i = 0
+while i < n and not(x[i] < x[0]):
+    i += 1
+if i < n:
+    print("5. Nem az első a legkisebb!")
+else:
+    print("5. Az első a legkisebb!")
 
 # F6
 
 
 # F7
+# 7. Monoton növekedő-e a lista?
+# 7. Nem monoton növekvő!
 
 
 # F8
