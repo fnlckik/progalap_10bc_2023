@@ -77,21 +77,64 @@ else:
     print("5. Az első a legkisebb!")
 
 # F6
+# 6. Add meg az első olyan elemet, amely nagysága eléri a lista átlagát!
+# Eléri: legalább akkora, mint az átlag
+# Összegzés tétel
+osszeg = 0
+for i in range(n):
+    osszeg += x[i]
+atlag = osszeg / n
 
+# Keresés => Kiválasztás
+i = 0
+while not(x[i] >= atlag):
+    i += 1
+print("6. Első szám ami eléri az átlagot:", x[i])
 
 # F7
 # 7. Monoton növekedő-e a lista?
 # 7. Nem monoton növekvő!
+# Eldöntés: Van-e elem, ami kisebb az előtte levőnél
+# i = 0
+# while i < n-1 and not(x[i] > x[i+1]):
+#     i += 1
 
+i = 1
+while i < n and not(x[i] < x[i-1]):
+    i += 1
+if i < n:
+    print("7. Nem monoton növekvő!")
+else:
+    print("7. Monoton növekvő!")
 
 # F8
-
+# Egyforma előjelű-e az összes eleme a listának?
+# 8. Nem egyforma előjelű az összes elem!
+# Igaz-e, hogy mindegyik elem ugyanolyan előjelű, mint az első?
+# Eldöntés: Van-e olyan elem, ami más előjelű mint az első?
+# x[0] > 0 and x[i] < 0 or x[0] < 0 and x[i] > 0
+i = 0
+while i < n and not(x[i] * x[0] < 0):
+    i += 1
+if i < n:
+    print("8. Nem egyforma előjelűek!")
+else:
+    print("8. Mindegyik egyforma előjelű!")
 
 # F9 
 
 
 # F10
-
+# 10. Van-e lokális maximum a listában? Ha igen, add meg az első helyét és értékét!
+# Lokális maximum: nagyobb mindkét szomszédjánál.
+# 10. Első lokális maximum helye: 3, értéke: 6.
+i = 1
+while i < n-1 and not(x[i] > x[i-1] and x[i] > x[i+1]):
+    i += 1
+if i < n-1:
+    print("10. Első lokális maximum helye:", i+1 ,", értéke:", x[i])
+else:
+    print("10. Nincs lokális maximum.")
 
 # F11
 
