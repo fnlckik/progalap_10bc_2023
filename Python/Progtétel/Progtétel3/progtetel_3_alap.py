@@ -46,6 +46,44 @@ for i in range(m):
     # ertekek.append(x[negativak[i]])
 print("Negatívak értékei:", ertekek)
 
-# F5
+# F5 - Szétválogatás tétel
 # Válogasd szét a páros és a páratlan elemeket!
+parosak = []
+paratlanok = []
+for i in range(n):
+    if x[i] % 2 == 0:
+        parosak.append(x[i])
+    else:
+        paratlanok.append(x[i])
+print("5. Párosak és páratlanok")
+print("Párosak:", parosak)
+print("Páratlanok:", paratlanok)
 
+# F6
+# Válogasd ki a lokális minimumok indexeit!
+# Lokális minimum: közbülső elem, aki szomszédainál kisebb
+# szomszédainál kisebb: x[i] < x[i-1] and x[i] < x[i+1]
+
+lokalminek = []
+for i in range(1, n-1):
+    if x[i] < x[i-1] and x[i] < x[i+1]:
+        lokalminek.append(i)
+print("6. Lokális minimumok:", lokalminek)
+
+# F7
+# Válogasd szét a lista indexeit az alapján,
+# hogy adott helyen az érték nő / csökken / állandó!
+novekedesek = []
+csokkenesek = []
+allandok = []
+for i in range(1, n): # 1-től n-i-ig
+    if x[i] > x[i-1]:
+        novekedesek.append(i)
+    elif x[i] < x[i-1]:
+        csokkenesek.append(i)
+    else:
+        allandok.append(i)
+print("7. Elemek növekedése")
+print("Növekedők:", novekedesek)
+print("Csökkenők:", csokkenesek)
+print("Állandók:", allandok)
