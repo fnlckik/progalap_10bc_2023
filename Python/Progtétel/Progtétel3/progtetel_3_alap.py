@@ -58,3 +58,29 @@ print("5. Párosak és páratlanok")
 print("Párosak:", parosak)
 print("Páratlanok:", paratlanok)
 
+# F6
+# Válogasd ki a lokális minimumok indexeit!
+# Lokális minimum: szomszédosaknál kisebb
+lokminek = []
+for i in range(1, n-1):
+    if x[i-1] > x[i] and x[i] < x[i+1]:
+        lokminek.append(i)
+print("6. Lokális minimumok indexei:", lokminek)        
+
+# F8
+# Válogasd szét a lista indexeit az alapján,
+# hogy adott helyen az érték nő / csökken / állandó!
+novekedok = []
+csokkenok = []
+allandok = []
+for i in range(1, n):
+    if x[i] > x[i-1]:
+        novekedok.append(i)
+    elif x[i] < x[i-1]:
+        csokkenok.append(i)
+    else:
+        allandok.append(i)
+print("8. Növ / csök / áll:")
+print("Növekedők:", novekedok)
+print("Csökkenők:", csokkenok)
+print("Állandók:", allandok)
