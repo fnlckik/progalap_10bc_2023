@@ -10,4 +10,17 @@ szamok = []
 for i in range(n):
     szam = int(input())
     szamok.append(szam)
-print(szamok)
+
+# Mit csinálunk a listával?
+print("Beolvasott lista:", szamok)
+
+s = 0
+for i in range(n):
+    s += szamok[i]
+print("Elemek összege:", s)
+
+parosak = []
+for i in range(n):
+    if szamok[i] % 2 == 0:
+        parosak.append(szamok[i])
+print("Párosak:", parosak)
