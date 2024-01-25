@@ -1,0 +1,7 @@
+6
+alma 5
+korte 3
+banan 2
+dinnye 1
+papaja 12
+mango 3
