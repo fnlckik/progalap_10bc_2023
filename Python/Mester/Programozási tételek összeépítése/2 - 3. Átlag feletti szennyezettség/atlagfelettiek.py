@@ -12,4 +12,17 @@ for i in range(n):
 # print(estiek)
 
 # Feld - Összegzés + Kiválogatás
+s = 0
+for i in range(n):
+    s += estiek[i]
+atlag = s / n
 
+nagyok = []
+for i in range(n):
+    if estiek[i] > atlag:
+        nagyok.append(i)
+
+# Ki
+print(len(nagyok), end=" ")
+for i in range(len(nagyok)):
+    print(nagyok[i]+1, end=" ")
