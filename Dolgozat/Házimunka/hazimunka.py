@@ -61,5 +61,14 @@ print(f"b) Heti arány (%): {round(arany, 20)}")
 
 # F6 - Bónusz
 print("6. feladat: ", end="")
+atlag = 0
+for i in range(n):
+    atlag += len(nevek[i])
+atlag = atlag / n
 
+i = n-2
+while i > 0 and not(gyakorisagok[i] == 1 and percek[i] > percek[i-1] and percek[i] > percek[i+1] and len(nevek[i]) > atlag):
+    i -= 1
+if i > 0:
+    print(nevek[i])
 
