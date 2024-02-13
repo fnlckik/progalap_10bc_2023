@@ -9,8 +9,11 @@ def osszeg(a):
     return osszeg
 
 # Kulcsár Máté
-def osszeg2(a):
-    ...
+def osszeg2(*a):
+    osszeg = 0
+    for i in range(len(a)):
+        osszeg += a[i]
+    return osszeg
 
 print(osszeg([2, 5, -1])) #6
 print(osszeg([3, -1])) #2
