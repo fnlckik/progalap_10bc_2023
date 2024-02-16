@@ -9,6 +9,7 @@ def novel2(x):
 def modosit(lista):
     # lista = [2, 3]
     lista[0] = 404
+    lista.append(0)
 
 # Globális változó
 x = 5
@@ -19,6 +20,8 @@ x = novel2(x)
 print(x)
 
 # --------------------------
+# Ez is globális változó!
+# Listák: memória címeket hordoznak magukban
 lista = [5, 2, -3, 7]
 modosit(lista)
 print(lista)
