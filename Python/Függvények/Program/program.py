@@ -4,12 +4,12 @@ def beolvas():
 def feldolgoz():
     ...
 
-def kiir():
-    ...
+def kiir(szin):
+    print("A legrövidebb szín:", szin)
     
 def main():
     beolvas()
     feldolgoz()
-    kiir()
+    kiir("fekete")
 
 main()
