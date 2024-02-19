@@ -28,6 +28,7 @@ i = 0
 while i < n and penz > 0:
     x = nyeremeny(tet)
     penz = penz - tet + x
+    i += 1
     # print(penz)
 if penz <= 0:
     print("Gond van:", penz)
