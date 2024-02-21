@@ -9,8 +9,8 @@ print(f(5))
 
 # Másodfokú "függvény" ~ eljárás
 def e(x):
-    print(x*x)
-    return None
+    print(f(x))
+    # return None
 
 # Eljárásként
 print(e(5))
