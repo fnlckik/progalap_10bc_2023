@@ -1,23 +1,27 @@
 # Tipikus python program felépítése számunkra
 
-# Beolvasas
-n = int(input())
-szinek = []
-for i in range(n):
-    szin = input()
-    szinek.append(szin)
+# Eljárás!
+def beolvasas(szinek):
+    n = int(input())
+    for i in range(n):
+        szin = input()
+        szinek.append(szin)
 
-# Feldolgozas - min kiválasztás tétel
-mini = 0
-for i in range(1, n):
-    if len(szinek[i]) < len(szinek[mini]):
-        mini = i
-legrovidebb_szin = szinek[mini]
+def legrovidebb(szinek):
+    mini = 0
+    for i in range(1, len(szinek)):
+        if len(szinek[i]) < len(szinek[mini]):
+            mini = i
+    return szinek[mini]
 
-# Kiiras
-print("A legrövidebb nevű szín:", legrovidebb_szin)
+def kiiras(szin):
+    print("A legrövidebb nevű szín:", szin)
 
 # Most:
-# beolvasas()
-# feldolgozas()
-# kiiras()
+def main():
+    szinek = []
+    beolvasas(szinek)
+    legrovidebb_szin = legrovidebb(szinek)
+    kiiras(legrovidebb_szin)
+
+main()
