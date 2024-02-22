@@ -1,3 +1,5 @@
+# n hosszú sort ír ki
+# "a" és "b" karakterekkel váltakozva
 def sor(n, a, b):
     for i in range(n):
         if i % 2 == 0:
@@ -6,13 +8,15 @@ def sor(n, a, b):
             print(b, end=" ")
     print()
 
-def main():
-    n = int(input("Sorok száma: "))
+def sakktabla(n, a, b):
     for i in range(n):
         if i % 2 == 0:
-            sor(n, "X", "0")
+            sor(n, a, b)
         else:
-            sor(n, "0", "X")
+            sor(n, b, a)
 
+def main():
+    n = int(input("Sorok száma: "))
+    sakktabla(n, "X", "0")
 
 main()
