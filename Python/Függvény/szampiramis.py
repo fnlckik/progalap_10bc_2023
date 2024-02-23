@@ -8,9 +8,11 @@
 def sor(n):
     for i in range(1, n+1):
         print(i, end=" ")
+    print()
 
 def main():
     n = int(input("Sorok száma: "))
-    sor(n)
+    for i in range(1, n+1):
+        sor(i)
 
 main()
