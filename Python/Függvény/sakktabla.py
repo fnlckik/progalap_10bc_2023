@@ -8,12 +8,17 @@
 # X 0 X 0 X 0 X 0
 # 0 X 0 X 0 X 0 X
 
+import os
+from termcolor import colored
+
+os.system("cls")
+
 def sor(n, a, b):
     for i in range(n):
         if i % 2 == 0:
-            print(a, end=" ")
+            print(colored(a, "red"), end=" ")
         else:
-            print(b, end=" ")
+            print(colored(b, "green"), end=" ")
     print()
     
 def sakktabla(n, a, b):
