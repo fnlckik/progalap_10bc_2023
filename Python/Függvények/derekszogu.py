@@ -2,11 +2,18 @@ from math import pi, sqrt as gyok
 from random import randint
 
 def generalas(oldalak):
+    # a = randint(1, 100)
+    # b = randint(a, 100)
     a = randint(1, 100)
-    b = randint(a, 100)
+    b = randint(1, 100)
+    if a < b:
+        oldalak.append(a)
+        oldalak.append(b)
+    else:
+        oldalak.append(b)
+        oldalak.append(a)
+
     c = gyok(oldalak[0] ** 2 + oldalak[1] ** 2)
-    oldalak.append(a)
-    oldalak.append(b)
     oldalak.append(round(c, 2))
     
 def haromszog(a, b):
