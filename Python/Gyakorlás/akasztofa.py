@@ -87,19 +87,29 @@ def csere(aktualis: list[str], betu: str, megoldas: str):
 # aktualis = ["_", "_", "_", "_"]
 # Ekkor => aktualis = ["_", "_", "m", "_"]
 
+# Eljárás:
+# Feltölti az aktuális listát
+# a megoldás elemeivel!
+def megoldottuk(aktualis, megoldas):
+    for i in range(len(aktualis)):
+        aktualis[i] = megoldas[i]
+
 # Függvény:
 # Beolvasunk egy betűt a felhasználótól
 # és cseréljük a lista megfelelői
 # elemeit a helyes betűre!
-# Visszatérés: Hány találatos volt a tipp?
-def tipp(aktualis, megoldas, rosszak):
+# Visszatérés: Hány hibánál járunk?
+def tipp(aktualis, megoldas, rosszak, hibak_szama):
     betu = input("\nTipp: ")
+    if betu == megoldas:
+        megoldottuk(aktualis, megoldas)
     if len(betu) > 1:
-        return 1
+        return hibak_szama
     db = csere(aktualis, betu, megoldas)
-    if db == 0:
+    if db == 0 and not eleme(betu, "", rosszak):
+        hibak_szama += 1
         rosszak.append(betu)
-    return db
+    return hibak_szama
 
 # Függvény:
 # Egy lista karaktereit
@@ -116,9 +126,7 @@ def szoveg(lista):
 # Visszatér a hibák számának aktuális értékével!
 # tippelés, kiértékelés, újra kiírás
 def fordulo(aktualis, megoldas, hibak_szama, rosszak):
-    eltalalt = tipp(aktualis, megoldas, rosszak)
-    if eltalalt == 0:
-        hibak_szama += 1
+    hibak_szama = tipp(aktualis, megoldas, rosszak, hibak_szama)
     system("cls")
     print("Hibák száma:", hibak_szama)
     print("Rosszak:", rosszak)
@@ -146,7 +154,7 @@ def jatek(aktualis, megoldas):
 def main():
     system("cls")
     megoldas = sorsolas()
-    print(megoldas) # csalás magunk számára
+    #print(megoldas) # csalás magunk számára
     aktualis = kezdeti_allas(megoldas)
     kiiras(aktualis, megoldas)
     jatek(aktualis, megoldas)
