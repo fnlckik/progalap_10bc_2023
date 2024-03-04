@@ -41,7 +41,7 @@ def eleme(c1, c2, lista):
 # mássalhangzókra.
 def kiiras(aktualis, megoldas):
     # print("_ "*len(szo))
-    print("Feladvány:")
+    print("\nFeladvány:")
     ketjegyuek = ["cs", "dz", "gy", "ly", "ny", "sz", "ty", "zs"]
     ketjegyuE = False
     i = 0
@@ -92,9 +92,13 @@ def csere(aktualis: list[str], betu: str, megoldas: str):
 # és cseréljük a lista megfelelői
 # elemeit a helyes betűre!
 # Visszatérés: Hány találatos volt a tipp?
-def tipp(aktualis, megoldas):
-    betu = input("Tipp: ")
+def tipp(aktualis, megoldas, rosszak):
+    betu = input("\nTipp: ")
+    if len(betu) > 1:
+        return 1
     db = csere(aktualis, betu, megoldas)
+    if db == 0:
+        rosszak.append(betu)
     return db
 
 # Függvény:
@@ -107,22 +111,37 @@ def szoveg(lista):
     return s
 # Pl.: szoveg(["a", "l", "m", "a"]) == "alma"
 
+# Függvény:
+# Egyetlen fordulót lebonyolít!
+# Visszatér a hibák számának aktuális értékével!
+# tippelés, kiértékelés, újra kiírás
+def fordulo(aktualis, megoldas, hibak_szama, rosszak):
+    eltalalt = tipp(aktualis, megoldas, rosszak)
+    if eltalalt == 0:
+        hibak_szama += 1
+    system("cls")
+    print("Hibák száma:", hibak_szama)
+    print("Rosszak:", rosszak)
+    kiiras(aktualis, megoldas)
+    return hibak_szama
+
+# Eljárás:
+# Kiírja a játék eredményét!
+def eredmenyhirdetes(hibak_szama):
+    if hibak_szama < 10:
+        print("Nyertél!")
+    else:
+        print("Vesztettél!")
+
 # Eljárás:
 # Játék ciklus
 # Ez történik a játék során.
 def jatek(aktualis, megoldas):
     hibak_szama = 0
+    rosszak = []
     while szoveg(aktualis) != megoldas and hibak_szama < 10:
-        eltalalt = tipp(aktualis, megoldas)
-        if eltalalt == 0:
-            hibak_szama += 1
-        system("cls")
-        print("Hibák száma:", hibak_szama)
-        kiiras(aktualis, megoldas)
-    if hibak_szama < 10:
-        print("Nyertél!")
-    else:
-        print("Vesztettél!")
+        hibak_szama = fordulo(aktualis, megoldas, hibak_szama, rosszak)
+    eredmenyhirdetes(hibak_szama)
 
 def main():
     system("cls")
