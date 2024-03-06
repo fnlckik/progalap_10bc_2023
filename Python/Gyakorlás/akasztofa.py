@@ -1,6 +1,7 @@
 from random import randrange
 from os import system
 
+# Eljárás:
 # Kap egy "s" szöveg paramétert
 # kirajzolja a neki megfelelő feladványt
 # (az aktuális állapotot)
@@ -10,6 +11,7 @@ def kirajzol(s):
         print(s[i], end=" ")
     print()
 
+# Függvény:
 # Egy listából választ egy random
 # szót és visszaadja
 def sorsolas():
@@ -40,14 +42,51 @@ def csere(betu, aktualis, megoldas):
         if megoldas[i] == betu:
             aktualis[i] = betu
 
+# Függvény:
+# Benne van-e "elem" a "lista"-ban?
+# (True, False)
+def bennevan(elem, lista):
+    i = 0
+    while i < len(lista) and not(lista[i] == elem):
+        i += 1
+    return i < len(lista)
+
+# Függvény:
+# Egy forduló lebonyolítása
+# Megadja, hogy a forduló után
+# hány hibánál járunk.
+def fordulo(aktualis, megoldas, hibaszam):
+    betu = input("\nBetű: ")
+    if not bennevan(betu, megoldas):
+        hibaszam += 1
+    csere(betu, aktualis, megoldas)
+    system("cls")
+    print(megoldas) # csalás magunknak
+    print("Hibák száma:", hibaszam)
+    kirajzol(aktualis)
+    return hibaszam
+
+def eredmenyhirdetes(hibaszam):
+    if hibaszam <= 2:
+        print("Nyertél!")
+    else:
+        print("Vesztettél!")
+
+# Eljárás:
+# Egy teljes játék lebonyolítása
+# Vége: nyereség vagy veszteség
+def jatek(megoldas):
+    aktualis = kezdeti_allapot(len(megoldas))
+    kirajzol(aktualis)
+    hibaszam = 0
+    while bennevan("_", aktualis) and hibaszam <= 2:
+        hibaszam = fordulo(aktualis, megoldas, hibaszam)
+    eredmenyhirdetes(hibaszam)
+
 def main():
     system("cls")
     megoldas = sorsolas()
-    aktualis = kezdeti_allapot(len(megoldas))
     print(megoldas) # csalás magunknak
-    kirajzol(aktualis)
-    betu = input("\nBetű: ")
-    csere(betu, aktualis, megoldas)
-    kirajzol(aktualis)
+    jatek(megoldas)
 
 main()
