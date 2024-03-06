@@ -55,18 +55,23 @@ def bennevan(elem, lista):
 # Egy forduló lebonyolítása
 # Megadja, hogy a forduló után
 # hány hibánál járunk.
-def fordulo(aktualis, megoldas, hibaszam):
+# Early return: korai visszatérés (hibás esetek kezelése)
+def fordulo(aktualis, megoldas, rosszak):
     betu = input("\nBetű: ")
-    if not bennevan(betu, megoldas):
-        hibaszam += 1
+    if len(betu) > 1:
+        return len(rosszak)
+    if not bennevan(betu, megoldas) and not bennevan(betu, rosszak):
+        rosszak.append(betu)
     csere(betu, aktualis, megoldas)
     system("cls")
     print(megoldas) # csalás magunknak
-    print("Hibák száma:", hibaszam)
+    print("Hibák száma:", len(rosszak))
+    print("Rosszak:", rosszak)
     kirajzol(aktualis)
-    return hibaszam
+    return len(rosszak)
 
 def eredmenyhirdetes(hibaszam):
+    print()
     if hibaszam <= 2:
         print("Nyertél!")
     else:
@@ -78,10 +83,10 @@ def eredmenyhirdetes(hibaszam):
 def jatek(megoldas):
     aktualis = kezdeti_allapot(len(megoldas))
     kirajzol(aktualis)
-    hibaszam = 0
-    while bennevan("_", aktualis) and hibaszam <= 2:
-        hibaszam = fordulo(aktualis, megoldas, hibaszam)
-    eredmenyhirdetes(hibaszam)
+    rosszak = []
+    while bennevan("_", aktualis) and len(rosszak) <= 2:
+        fordulo(aktualis, megoldas, rosszak)
+    eredmenyhirdetes(len(rosszak))
 
 def main():
     system("cls")
