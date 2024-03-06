@@ -3,10 +3,11 @@ from os import system
 
 # Kap egy "s" szöveg paramétert
 # kirajzolja a neki megfelelő feladványt
-def vonalak_kirajzol(s):
+# (az aktuális állapotot)
+def kirajzol(s):
     print("Feladvány:")
     for i in range(len(s)):
-        print("_", end=" ")
+        print(s[i], end=" ")
     print()
 
 # Egy listából választ egy random
@@ -21,10 +22,32 @@ def sorsolas():
     neo = szavak[r]
     return neo
 
+# Függvény:
+# Állapottér
+# Előállít egy megoldás hosszú listát
+# "_" karakterekkel!
+def kezdeti_allapot(n):
+    eredmeny = []
+    for i in range(n):
+        eredmeny.append("_")
+    return eredmeny
+
+# Eljárás:
+# Kicseréli a "megoldas" szerint eltalált
+# "betu"-ket az "aktualis" listában!
+def csere(betu, aktualis, megoldas):
+    for i in range(len(megoldas)):
+        if megoldas[i] == betu:
+            aktualis[i] = betu
+
 def main():
     system("cls")
     megoldas = sorsolas()
-    print(megoldas)
-    vonalak_kirajzol(megoldas)
+    aktualis = kezdeti_allapot(len(megoldas))
+    print(megoldas) # csalás magunknak
+    kirajzol(aktualis)
+    betu = input("\nBetű: ")
+    csere(betu, aktualis, megoldas)
+    kirajzol(aktualis)
 
 main()
