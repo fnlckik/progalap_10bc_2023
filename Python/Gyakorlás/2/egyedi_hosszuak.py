@@ -14,7 +14,10 @@ Egy lista a megfelelő (egyedi) elemekkel!
 # Igaz, ha van "n" hosszú szó a listában
 # Hamis, ha nincs "n" hosszú szó a listában
 def van_ilyen_hossz(n, lista):
-    ...
+    i = 0
+    while i < len(lista) and not(len(lista[i]) == n):
+        i += 1
+    return i < len(lista)
 
 def egyedi_hosszuak(szavak):
     egyediek = []
