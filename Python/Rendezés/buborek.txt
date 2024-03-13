@@ -1,0 +1,21 @@
+Eredeti:
+5 2 7 1 2 3
+
+Buborékos rendezés
+
+Most: csak egymás mellettieket cserélhetünk!
+
+Egy "kör" alatt a legnagyobb a helyén van!
+
+2 5 7 1 2 3
+2 5 1 7 2 3
+2 5 1 2 7 3
+2 5 1 2 3 |7
+
+2 1 5 2 3 |7
+2 1 2 5 3 |7
+2 1 2 3 |5 7
+
+1 2 2 |3 5 7
+
+1 2 |2 3 5 7
