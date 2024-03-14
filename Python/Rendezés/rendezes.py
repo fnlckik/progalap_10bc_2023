@@ -1,3 +1,5 @@
+from random import randint
+
 # Emlék: változók cseréje
 # seged = a
 # a = b
@@ -30,13 +32,23 @@ def rendez(x):
         j = minimum_index(x, i)
         csere(x, i, j)
 
-def main():
-    x = [5, 2, 7, 1, 2, 3]
+def feltolt(n):
+    lista = []
+    for i in range(n):
+        r = randint(1, 9)
+        lista.append(r)
+    return lista
 
+def main():
+    
+    x = [5, 2, 7, 1, 2, 3]
     print("Eredeti:", x)
     rendez(x)
     print("Rendezett:", x)
 
-    
+    x = feltolt(100)
+    print("Random lista:", x)
+    rendez(x)
+    print("Random rendezett:", x)
 
 main()
