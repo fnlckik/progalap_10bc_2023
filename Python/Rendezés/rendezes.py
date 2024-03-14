@@ -22,10 +22,22 @@ def minindex(x, k):
 # Minimumkiválasztásos rendezés
 # 1. Megkeressük az i-edik legkisebb elemet
 # 2. Megcseréljük az aktuálissal
-def rendez(x):
+def minkiv(x):
     for i in range(len(x)):
         j = minindex(x, i)
         csere(x, i, j)
+
+# Buborékos rendezés
+def buborek(x):
+    n = len(x)
+    for i in range(n):
+        vanCsere = False
+        for j in range(n-i-1):
+            if x[j] > x[j+1]:
+                csere(x, j, j+1)
+                vanCsere = True
+        if not vanCsere:
+            return
 
 # Függvény:
 # Megad egy "n" elemű listát
@@ -41,12 +53,12 @@ def feltolt(n):
 def main():
     x = [5, 2, 7, 1, 2, 3]
     print("Eredeti:", x)
-    rendez(x)
+    buborek(x)
     print("Rendezett:", x)
 
     x = feltolt(100)
     print("Random lista:", x)
-    rendez(x)
+    buborek(x)
     print("Rendezett random:", x)
 
 main()
