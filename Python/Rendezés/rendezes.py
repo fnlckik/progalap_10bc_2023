@@ -26,7 +26,8 @@ def minimum_index(x, i):
             mini = j
     return mini
 
-def rendez(x):
+# Minimum kiválasztásos rendezés
+def minkiv(x):
     n = len(x)
     for i in range(n):
         j = minimum_index(x, i)
@@ -39,16 +40,35 @@ def feltolt(n):
         lista.append(r)
     return lista
 
+# Buborékos rendezést csinál a listán (javított)
+# def buborekos(x):
+#     n = len(x)
+#     for i in range(n):
+#         for j in range(n-1-i):
+#             if x[j] > x[j+1]:
+#                 csere(x, j, j+1)
+
+def buborekos(x):
+    n = len(x)
+    for i in range(n):
+        van_csere = False
+        for j in range(n-1-i):
+            if x[j] > x[j+1]:
+                csere(x, j, j+1)
+                van_csere = True
+        if not van_csere:
+            return None
+
 def main():
     
     x = [5, 2, 7, 1, 2, 3]
     print("Eredeti:", x)
-    rendez(x)
+    buborekos(x)
     print("Rendezett:", x)
 
     x = feltolt(100)
     print("Random lista:", x)
-    rendez(x)
+    buborekos(x)
     print("Random rendezett:", x)
 
 main()
