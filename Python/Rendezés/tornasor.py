@@ -7,18 +7,21 @@ def minindex(x, k):
             index = i
     return index
 
-def rendez(nevek):
+# Ezt most nem használjuk!
+def rendez_eredeti(nevek):
     n = len(nevek)
     for i in range(n):
         j = minindex(nevek, i)
         nevek[i], nevek[j] = nevek[j], nevek[i]
 
-def rendez2(magassagok, nevek):
-    n = len(magassagok)
+# Rendezi az x listát az y szerint!
+# rendez(x, y)
+def rendez(x, y):
+    n = len(x)
     for i in range(n):
-        j = minindex(magassagok, i)
-        magassagok[i], magassagok[j] = magassagok[j], magassagok[i]
-        nevek[i], nevek[j] = nevek[j], nevek[i]
+        j = minindex(y, i)
+        x[i], x[j] = x[j], x[i]
+        y[i], y[j] = y[j], y[i]
 
 def main():
     nevek = ["Robi", "Laci", "Anna",  "Dani", "Ricsi", "Marci"]
@@ -28,12 +31,12 @@ def main():
     # F1 - Adjuk meg a névsort!
     # Feltehető, hogy nincs ékezet a nevekben!
     nevsor = nevek.copy()
-    rendez(nevsor)
+    rendez(nevsor, nevsor.copy())
     print("1. Névsor:", nevsor)
 
     # F2 - Adjuk meg a tornasort (nevek)!
     # (Magasság szerinti növekvő sorrend.)
-    rendez2(magassagok, nevek)
+    rendez(nevek, magassagok)
     print("2. Tornasor:")
     print("   Nevek:", nevek)
     print("   Magasságok:", magassagok)
