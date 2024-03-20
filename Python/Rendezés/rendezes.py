@@ -1,4 +1,5 @@
 from random import randint
+from time import time
 
 # Eljárás:
 # Megcseréli az "x" lista
@@ -20,6 +21,7 @@ def minindex(x, k):
     return index
 
 # Minimumkiválasztásos rendezés
+# Mj: ez pontosan n darab cserét végez
 # 1. Megkeressük az i-edik legkisebb elemet
 # 2. Megcseréljük az aktuálissal
 def minkiv(x):
@@ -28,6 +30,9 @@ def minkiv(x):
         csere(x, i, j)
 
 # Buborékos rendezés
+# Mj: Nem fix számú cserét végez
+# 1. Csak egymás melletti elemeket cserélünk!
+# 2. Megállunk ha nem volt több csere
 def buborek(x):
     n = len(x)
     for i in range(n):
@@ -50,15 +55,39 @@ def feltolt(n):
         eredmeny.append(r)
     return eredmeny
 
-def main():
-    x = [5, 2, 7, 1, 2, 3]
-    print("Eredeti:", x)
-    buborek(x)
-    print("Rendezett:", x)
+# Másolás tétele
+def masol(x):
+    masolat = []
+    for i in range(len(x)):
+        masolat.append(x[i])
+    return masolat
 
-    x = feltolt(100)
-    print("Random lista:", x)
-    buborek(x)
-    print("Rendezett random:", x)
+def teszt(n):
+    x = feltolt(n)
+    print("Lista feltöltve!")
+    
+    y = x.copy()
+    kezdet = time()
+    minkiv(y)
+    veg = time()
+    print("Minkiv kész:", veg - kezdet)
+    
+    z = x.copy()
+    kezdet = time()
+    buborek(z)
+    veg = time()
+    print("Buborékos kész:", veg - kezdet)
+
+def main():
+    # x = [5, 2, 7, 1, 2, 3]
+    # print("Eredeti:", x)
+    # minkiv(x)
+    # print("Rendezett:", x)
+
+    # x = feltolt(100)
+    # print("Random lista:", x)
+    # minkiv(x)
+    # print("Rendezett random:", x)
+    teszt(10000)
 
 main()
