@@ -62,6 +62,21 @@ def masol(x):
         masolat.append(x[i])
     return masolat
 
+# 5 6 7 8 7 8 9 8 7 8 9 10 11 12 11 12 13
+# 80%-ban az előzőnél 1-gyel nagyobb
+# 20%-ban az előzőnél 1-gyel kisebb
+def feltolt_nagyjabol_rendezett(n):
+    eredmeny = []
+    eredmeny.append(randint(1, 9))
+    for i in range(n):
+        elozo = eredmeny[i]
+        r = randint(1, 10)
+        if r <= 8:
+            eredmeny.append(elozo + 1)
+        else:
+            eredmeny.append(elozo - 1)          
+    return eredmeny
+
 def teszt(n):
     x = feltolt(n)
     print("Lista feltöltve!")
@@ -77,6 +92,11 @@ def teszt(n):
     buborek(z)
     veg = time()
     print("Buborékos kész:", veg - kezdet)
+    
+    kezdet = time()
+    w = sorted(x)
+    veg = time()
+    print("Gyors rendezés:", veg - kezdet)
 
 def main():
     # x = [5, 2, 7, 1, 2, 3]
@@ -88,6 +108,6 @@ def main():
     # print("Random lista:", x)
     # minkiv(x)
     # print("Rendezett random:", x)
-    teszt(10000)
+    teszt(100)
 
 main()
