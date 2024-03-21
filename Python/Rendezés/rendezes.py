@@ -75,7 +75,7 @@ def feltolt_reszleges(n):
 # Leteszteli a rendezéseket egy
 # n elemű listában!
 def teszt(n):
-    x = feltolt_reszleges(n)
+    x = feltolt(n)
     print("Eredeti feltöltve!")
 
     y = x.copy()
@@ -89,6 +89,13 @@ def teszt(n):
     buborek(z)
     veg = time()
     print("Buborékos kész:", veg - kezdet)
+    
+    # Ezt nem lehet használni!
+    w = x.copy()
+    kezdet = time()
+    w = sorted(w)
+    veg = time()
+    print("Gyors rendezés kész:", veg - kezdet)
 
 def main():
     # x = [5, 2, 7, 1, 2, 3]
@@ -100,6 +107,6 @@ def main():
     # print("Random lista:", x)
     # buborek(x)
     # print("Rendezett random:", x)
-    teszt(30000)
+    teszt(1000)
 
 main()
