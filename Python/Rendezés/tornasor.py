@@ -3,17 +3,18 @@ def csere(x, i, j):
 
 # Buborékos rendezés
 # Rendezi az "x" és "y" listák elemeit (párhuzamosan)
-# az "x" szerint növekvő sorrendben!
+# az "x" szerint növekvő sorrendben
+# egyenlő "x" értékek esetén, "y" szerint csökkenően rendez!
 def rendez(x, y):
     n = len(x)
     for i in range(n):
         for j in range(n-1-i):
-            if x[j] > x[j+1]:
+            if x[j] > x[j+1] or x[j] == x[j+1] and y[j+1] > y[j]:
                 x[j], x[j+1] = x[j+1], x[j]
                 y[j], y[j+1] = y[j+1], y[j]
 
 def main():
-    nevek = ["Robi", "Laci", "Anna",  "Dani", "Ricsi", "Marci"]
+    nevek = ["Marci", "Laci", "Anna",  "Dani", "Ricsi", "Robi"]
     magassagok = [175, 142, 150, 158, 172, 175]
     n = len(nevek)
 
@@ -36,10 +37,14 @@ def main():
 
     # F3 - Egyetlen rendezési függvényt használjunk! - Kesz
 
-    # F4 - Azonos magasságok esetén a névsor alapján rendezzünk!
+    # F4 - Azonos magasságok esetén a 
+    # névsor alapján rendezzünk csökkenően!
     
     # F5 - Adjuk meg, hogy ki áll a tornasor közepén (medián)!
     print("5. A tornasor közepe: ", end="")
-
+    if n % 2 == 0:
+        print(nevek[n//2 - 1], nevek[n//2])
+    else:
+        print(nevek[n//2])
 
 main()
